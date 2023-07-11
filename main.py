@@ -63,7 +63,7 @@ print (f'ищите общий файл {file_name}.xlsx в папке "{os.getc
 
 
 # ** список стоп слов 
-stop_words_list = ['kazino','sex','gun','grug','strah','penis','pizda','zaim','zhopa','jopa','porno','pron','-', 'cazino', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+stop_words_list = ['kazino','sex','gun','drug','strah','penis','pizda','zaim','zhopa','jopa','porno','pron','-', 'cazino', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 # ** макс длина домена
 domain_name_length = 12
