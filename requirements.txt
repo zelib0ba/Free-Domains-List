@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+fake_useragent==1.4.0
+Requests==2.31.0
+wget==3.2
+xlsxwriter==3.2.0

@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import time
 import json
 
-os.system('cls||clear')
+# os.system('cls||clear')
 
 def get_html(url): # получаем страничку
     ua=UserAgent()
@@ -66,7 +66,7 @@ print (f'ищите общий файл {file_name}.xlsx в папке "{os.getc
 stop_words_list = ['kazino','sex','gun','drug','strah','penis','pizda','zaim','zhopa','jopa','porno','pron','-', 'cazino', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 # ** макс длина домена
-domain_name_length = 12
+domain_name_length = 6
 print (f'\nСоздаю файл со списком доменов, в которых нет стоп слов:\n\033[31m{stop_words_list}\033[0m\nи длина доменного имени не больше {domain_name_length} символов\n')
 
 for _ in os.listdir():
@@ -111,7 +111,7 @@ os.remove(f'{file_name}')
 print (f'ищите обработанный файл GoodDomains_{file_name[9:17]}.xlsx в папке "{os.getcwd()}"')
 
 
-quit()
+
 # ** функция для проверки домена на занятость. 
 def whois (domain):
     url = f'http://api.whois.vu/?q={domain}&clean'
@@ -127,10 +127,18 @@ def whois (domain):
     else:
         res = f"\033[32m{w['domain']} свободен\033[0m\n\033[1m•проверить что там было на \033[4mhttps://web.archive.org/web/2/{w['domain']}\n\n\033[0m"
     return res
+print (good_domain_list)
 
+f = open ('temp.xxx','w')
+for i in good_domain_list:
+    if len (i)<5:
+        f.write(i+'\n')
+f.close()
+quit()
 # ** проверка на занятость доменов из списка good_domain_list
 for i in good_domain_list:
     time.sleep(2)
+    print (i)
     print (whois(i))
 
 
